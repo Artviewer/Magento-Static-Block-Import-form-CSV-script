@@ -1,4 +1,4 @@
-# Magento Static Block Import from CSV script
+# Magento Static Block Import from CSV
 
 This issue will help you to import magento static block's from CSV file into magento database.
 You should specify the path for your csv file and path for app/Mage.php, it depends on the location of script upload.
