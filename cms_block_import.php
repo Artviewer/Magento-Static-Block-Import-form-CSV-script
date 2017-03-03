@@ -32,13 +32,14 @@ if($blocks){
       
         $store_id = $val[1]; // Get the ID of store view for the static block
         
-      
+        // ATTENTION! If there is only one store view in your shop, please comment next code
         $getId = "SELECT `block_id` FROM cms_block ORDER BY `block_id` DESC LIMIT 1;";
         $id_arr = $readConnection->query($getId)->fetchAll(); 
         $id = $id_arr[0]['block_id']; // Get the ID of last item in the cms_block table
       
         $setStore_id = "INSERT INTO cms_block_store (`block_id`,`store_id`) VALUES ('$id','$store_id');"; 
         $writeConnection->query($setStore_id); // Adding new string to the cms_block_store table with store view ID for new static block
+        // End of comment
     }
     echo 'New static blocks were successfuly created';
 }else{
